@@ -13,6 +13,7 @@
   <link rel="dns-prefetch" href="https://ajax.googleapis.com">
   <link rel="dns-prefetch" href="https://maps.googleapis.com">
   <link rel="dns-prefetch" href="https://maps.gstatic.com">
+  {{ 'https://code.jquery.com/jquery-3.3.1.min.js' | script_tag }}
 
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
@@ -98,6 +99,8 @@
 
   <script src="{{ 'vendor-scripts-v2.js' | asset_url | split: '?' | first }}" defer="defer"></script>
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+
 
   {%- if request.page_type contains 'customers/' -%}
     <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
